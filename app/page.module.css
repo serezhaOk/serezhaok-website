@@ -1,0 +1,74 @@
+.page {
+  padding-top: var(--top);
+}
+
+.intro {
+  max-width: 80%;
+  font-family: var(--font-text);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 44.8px;
+  letter-spacing: -0.01em;
+}
+
+/* В оригинале между абзацами пустая строка */
+.intro p + p {
+  margin-top: 44.8px;
+}
+
+.location {
+  margin-top: 22px;
+  font-family: var(--font-ui);
+  font-size: 17px;
+  line-height: 24px;
+}
+
+.page .showreel {
+  margin-top: 60px;
+  border-radius: 8px;
+  background: #000;
+}
+
+.about {
+  font-family: var(--font-text);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 44.8px;
+  letter-spacing: -0.01em;
+}
+
+.about p + p {
+  margin-top: 44.8px;
+}
+
+.case {
+  padding-top: var(--case-top);
+}
+
+/* Разделители между секциями: 60 px до линии, 63 px после */
+.sep {
+  margin: 60px 0 63px;
+}
+
+.sepCase {
+  margin: 50px 0 46px;
+}
+
+.sepEnd {
+  margin: 51px 0 63px;
+}
+
+@media (max-width: 1199.98px) {
+  .intro {
+    max-width: none;
+  }
+
+  .about {
+    font-size: 24px;
+    line-height: 33.6px;
+  }
+
+  .about p + p {
+    margin-top: 33.6px;
+  }
+}

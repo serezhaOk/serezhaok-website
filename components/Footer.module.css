@@ -1,0 +1,59 @@
+.footer {
+  container-type: inline-size;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.title,
+.links {
+  font-family: var(--font-ui);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+}
+
+.title {
+  color: var(--text-3);
+}
+
+.links {
+  list-style: none;
+  color: var(--text-soft);
+}
+
+.links li {
+  margin-top: 20px;
+}
+
+.links a:hover {
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* «Let's talk» занимает всю ширину колонки: кегль — четверть её ширины */
+.talk {
+  display: block;
+  width: fit-content;
+  /* Строка 0.75 em, а выносные элементы шрифта ниже неё растягивали страницу:
+     обрезаем лишнее, оставив сверху место под надстрочные */
+  overflow: hidden;
+  margin-top: calc(60px - 0.1em);
+  padding: 0.1em 0.02em 0.02em 0;
+  font-family: var(--font-text);
+  font-weight: 500;
+  font-size: 25cqw;
+  line-height: 0.75;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  color: var(--text-soft);
+  transition: color 200ms ease-out;
+}
+
+.talk:hover {
+  color: #000;
+}

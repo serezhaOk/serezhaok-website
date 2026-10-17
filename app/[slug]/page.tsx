@@ -1,0 +1,53 @@
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { projects, getProject } from '@/content/projects';
+import { CaseHeader } from '@/components/CaseHeader';
+import { Blocks } from '@/components/Blocks';
+import { ProjectGrid } from '@/components/ProjectGrid';
+import { Footer } from '@/components/Footer';
+import s from '../page.module.css';
+
+type Params = { slug: string };
+
+export const dynamicParams = false;
+
+export function generateStaticParams(): Params[] {
+  return projects.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProject(slug);
+  if (!project) return {};
+  return {
+    title: project.title,
+    alternates: { canonical: `/${slug}/` },
+    openGraph: { url: `/${slug}/`, title: project.title },
+  };
+}
+
+export default async function CasePage({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+  const project = getProject(slug);
+  if (!project) notFound();
+
+  const related = project.related.map((r) => {
+    const p = getProject(r);
+    if (!p) throw new Error(`В ${slug}.related указан несуществующий кейс ${r}`);
+    return { ...p.card, href: `/${p.slug}/` };
+  });
+
+  return (
+    <article className={`container ${s.case}`}>
+      <CaseHeader project={project} />
+      <hr className={`divider ${s.sepCase}`} />
+      <Blocks blocks={project.blocks} compact={project.compact} />
+
+      <hr className={`divider ${s.sepEnd}`} />
+      <ProjectGrid title="Related projects" cards={related} titleId="related" />
+
+      <hr className={`divider ${s.sepEnd}`} />
+      <Footer />
+    </article>
+  );
+}

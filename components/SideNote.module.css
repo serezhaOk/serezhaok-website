@@ -1,0 +1,26 @@
+.note {
+  position: fixed;
+  left: 17px;
+  bottom: 16px;
+  z-index: 50;
+  width: 168px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  line-height: 15.6px;
+  color: var(--text-3);
+}
+
+.note b {
+  font-weight: 400;
+  color: #000;
+}
+
+.thanks {
+  margin-top: 15.6px;
+}
+
+@media (max-width: 1199.98px) {
+  .note {
+    display: none;
+  }
+}

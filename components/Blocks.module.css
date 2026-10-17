@@ -1,0 +1,107 @@
+.blocks {
+  --p-size: 20px;
+  --p-line: 28px;
+}
+
+.compact {
+  --p-size: 17px;
+  --p-line: 24px;
+}
+
+/* В компактном режиме текст уже колонки, медиа — на всю ширину */
+.compact .p,
+.compact .h4 {
+  max-width: 83%;
+}
+
+.h2 {
+  font-family: var(--font-text);
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.01em;
+}
+
+.h3 {
+  font-family: var(--font-text);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 38.4px;
+  letter-spacing: -0.01em;
+}
+
+.h4 {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+}
+
+.label {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  color: var(--text-2);
+}
+
+.p,
+.list {
+  font-family: var(--font-ui);
+  font-size: var(--p-size);
+  line-height: var(--p-line);
+}
+
+.p strong,
+.list strong {
+  font-weight: 600;
+}
+
+.p a,
+.list a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.p a:hover,
+.list a:hover {
+  text-decoration-color: var(--text-2);
+}
+
+.list {
+  padding-left: 25px;
+  list-style: disc;
+}
+
+.list li + li {
+  margin-top: var(--p-line);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  gap: 3px;
+}
+
+@media (max-width: 1199.98px) {
+  .h2 {
+    font-size: 24px;
+    line-height: 28.8px;
+  }
+
+  .h3 {
+    font-size: 24px;
+    line-height: 28.8px;
+  }
+
+  .compact .p,
+  .compact .h4 {
+    max-width: none;
+  }
+
+  .row {
+    grid-template-columns: repeat(var(--mcols), minmax(0, 1fr));
+  }
+}
