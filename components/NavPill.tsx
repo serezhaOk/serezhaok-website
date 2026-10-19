@@ -117,7 +117,7 @@ function Segment({
 }) {
   return (
     // Неактивный сегмент выше по слою, чтобы уезжающий ползунок не перекрывал его текст
-    <motion.div layout transition={transition} className={s.segment} style={{ zIndex: active ? 0 : 1 }}>
+    <motion.div layout transition={transition} className={active ? `${s.segment} ${s.active}` : s.segment} style={{ zIndex: active ? 0 : 1 }}>
       {active && <motion.span layoutId="pill-thumb" transition={transition} className={s.thumb} />}
       {children}
     </motion.div>

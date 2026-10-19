@@ -1,4 +1,9 @@
-/* Замеры оригинала при 1440 px: дорожка 44 px высотой, верх на 20 px, по центру окна */
+/*
+ * Замеры оригинала при 1440 px: дорожка 44 px высотой, верх на 20 px, по центру окна.
+ * Покой: ползунок 36 px с полями 12, отступ от края дорожки 4 (с обводкой).
+ * Наведение и открытое меню: ползунок 40 px с полями 10, отступ 2.
+ * Неактивный пункт всегда 34 px с полями 12; между пунктами 10 px.
+ */
 .root {
   position: fixed;
   top: 20px;
@@ -11,9 +16,12 @@
   --inset: 3px; /* + 1 px обводки = 4 px до ползунка */
   --seg-h: 36px;
   --seg-pad: 12px;
+  --idle-h: 34px;
+  --idle-pad: 12px;
   position: relative;
   display: flex;
   align-items: center;
+  gap: 10px;
   height: 44px;
   padding: 0 var(--inset);
   border: 1px solid var(--pill-border);
@@ -31,9 +39,13 @@
 
 .segment {
   position: relative;
-  height: var(--seg-h);
+  height: var(--idle-h);
   border-radius: 50px;
   transition: height 250ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.active {
+  height: var(--seg-h);
 }
 
 .thumb {
@@ -54,13 +66,17 @@
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 var(--seg-pad);
+  padding: 0 var(--idle-pad);
   border-radius: 50px;
   font-family: var(--font-ui);
   font-size: 15px;
   line-height: 18px;
   white-space: nowrap;
   transition: padding 250ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.active .hit {
+  padding: 0 var(--seg-pad);
 }
 
 .content {
@@ -83,11 +99,6 @@
 .label {
   font-weight: 400;
   color: rgba(0, 0, 0, 0.4);
-  transition: color 150ms ease-out;
-}
-
-.hit:hover .label {
-  color: rgba(0, 0, 0, 0.6);
 }
 
 .labelActive {
@@ -111,6 +122,8 @@
     --inset: 3px;
     --seg-h: 44px;
     --seg-pad: 16px;
+    --idle-h: 44px;
+    --idle-pad: 16px;
   }
 }
 
