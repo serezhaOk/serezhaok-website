@@ -36,6 +36,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preload" href="/fonts/tomato-grotesk-medium.woff2" as="font" type="font/woff2" crossOrigin="" />
+      </head>
       <body>
         <a className="skip-link" href="#content">
           Skip to content

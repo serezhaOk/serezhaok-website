@@ -7,7 +7,7 @@ import s from './CursorDot.module.css';
 // Пружина подобрана по замерам оригинала (подгонка по 27 точкам): без перелёта, ~95% пути за 330 мс
 const spring = { stiffness: 390, damping: 48, mass: 1 };
 
-// Чёрная точка, которая догоняет курсор. Только для мыши; на тач-устройствах не показывается.
+// Чёрная точка, которая догоняет курсор мыши.
 export function CursorDot() {
   const reduce = useReducedMotion();
   const [visible, setVisible] = useState(false);
@@ -16,8 +16,9 @@ export function CursorDot() {
   const sx = useSpring(x, spring);
   const sy = useSpring(y, spring);
 
+  // Без проверки (pointer: fine): на ноутбуках с сенсорным экраном она прятала точку.
+  // Точка реагирует только на движение мыши, касания пальцем её не показывают.
   useEffect(() => {
-    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
     const onMove = (e: PointerEvent) => {
       if (e.pointerType !== 'mouse') return;
       x.set(e.clientX);

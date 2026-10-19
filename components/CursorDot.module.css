@@ -12,8 +12,3 @@
   transition: opacity 150ms ease-out;
 }
 
-@media not ((hover: hover) and (pointer: fine)) {
-  .dot {
-    display: none;
-  }
-}

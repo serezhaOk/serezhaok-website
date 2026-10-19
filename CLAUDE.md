@@ -4,7 +4,7 @@
 
 - Next.js 15 App Router, `output: 'export'`, `trailingSlash: true`. Без бэкенда, без next/image (`<img>` с width/height).
 - Стили: CSS Modules + `app/globals.css` с токенами. Tailwind нет.
-- Шрифты только через @fontsource (Inter, Instrument Sans как замена Tomato Grotesk).
+- Шрифты: Inter через @fontsource; Tomato Grotesk — файл в public/fonts/ (с сайта заказчика), Instrument Sans — запасной.
 - Брейкпоинты как у Framer: `≥1200` десктоп, `<1200` одна колонка; `<810` — мелкие правки (мета 2×2, меню без превью).
 - Контент — только в `content/`: `site.ts` (главная, меню, футер) и `projects/*.ts` (кейсы как массив блоков). Компоненты контент не хардкодят.
 - Медиа — в `public/media/`, ссылок на framerusercontent.com в коде быть не должно.
