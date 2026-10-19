@@ -22,17 +22,22 @@
 
 .links {
   list-style: none;
-  color: var(--text-soft);
 }
 
 .links li {
   margin-top: 20px;
 }
 
-.links a:hover {
-  color: #000;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+/* Как в оригинале: без подчёркивания, при наведении ссылка светлеет */
+.links a,
+.talk {
+  color: rgba(0, 0, 0, 0.8);
+  transition: color 150ms ease-out;
+}
+
+.links a:hover,
+.talk:hover {
+  color: rgba(0, 0, 0, 0.6);
 }
 
 /* «Let's talk» занимает всю ширину колонки: кегль — четверть её ширины */
@@ -50,10 +55,4 @@
   line-height: 0.75;
   letter-spacing: -0.03em;
   white-space: nowrap;
-  color: var(--text-soft);
-  transition: color 200ms ease-out;
-}
-
-.talk:hover {
-  color: #000;
 }

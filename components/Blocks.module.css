@@ -61,13 +61,14 @@
 .p a,
 .list a {
   text-decoration: underline;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
   text-underline-offset: 3px;
+  transition: color 150ms ease-out;
 }
 
 .p a:hover,
 .list a:hover {
-  text-decoration-color: var(--text-2);
+  color: #696969;
 }
 
 .list {
