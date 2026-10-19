@@ -14,14 +14,15 @@ export function ProjectCard({ card }: { card: Card }) {
           <h3 className={s.title}>{card.title}</h3>
           <p className={s.role}>{card.role}</p>
         </div>
-        {card.href && <ArrowIcon className={s.arrow} />}
+        <ArrowIcon className={s.arrow} />
       </div>
       <Media media={{ ...card.cover, aspect: COVER_ASPECT }} className={s.cover} />
     </>
   );
   const cls = [s.card, card.hideOnMobile && s.hideMobile].filter(Boolean).join(' ');
 
-  if (!card.href) return <div className={cls}>{body}</div>;
+  // Карточка без ссылки (Sleepiest) в оригинале всё равно анимируется при наведении, но никуда не ведёт
+  if (!card.href) return <div className={`${cls} ${s.link}`}>{body}</div>;
   const external = /^https?:/.test(card.href);
   return (
     <a className={`${cls} ${s.link}`} href={card.href} {...(external ? { target: '_blank', rel: 'noopener' } : {})}>
