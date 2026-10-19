@@ -23,6 +23,7 @@ const project: Project = {
     {
       type: 'p',
       text: 'MuseScore is a platform where composers can publish their sheet music, and musicians can discover scores that fit their needs—download them, save them, or practice directly in the browser or mobile app.',
+      mobileText: [20, 24],
     },
     {
       type: 'p',
@@ -34,23 +35,30 @@ const project: Project = {
     {
       type: 'p',
       text: 'As a first major step toward this vision, I partnered with the Head of Growth to design and run over 80 A/B experiments. These experiments were focused on shaping repeat behavior, and led to measurable improvements in D7 retention, registration conversion, and average session length.',
+      mt: [10, 10],
+      mobileText: [20, 24],
     },
     {
       type: 'p',
       text: 'The experimentation cycle was grounded in user needs, with each hypothesis intentionally balancing musicians’ motivations with business growth goals, ensuring that engagement mechanics reinforced the core value of the product rather than distracting from it.',
+      mt: [28, 24],
+      mobileText: [20, 24],
     },
     { type: 'media', items: [m(`${d}/02.png`, 3200, 3200, WIDE)] },
-    { type: 'media', items: [m(`${d}/03.png`, 3200, 3200, WIDE)] },
+    { type: 'media', items: [m(`${d}/03.png`, 3200, 3200, WIDE)], mt: [4, 4] },
     {
       type: 'p',
       text: 'One of my most impactful contributions was designing a new gamification system: Streaks, rewards, and motivational loops, entirely from scratch. This became one of the strongest retention drivers in recent years, giving MuseScore a fresh layer of habit-building mechanics and daily engagement.',
+      maxWidth: 840,
+      mobileText: [20, 24],
     },
-    { type: 'media', cols: 2, items: [m(`${d}/04.mp4`, 840, 968, WIDE), m(`${d}/05.png`, 3200, 3200, WIDE)] },
+    { type: 'media', cols: 2, items: [m(`${d}/04.mp4`, 840, 968, WIDE), m(`${d}/05.png`, 3200, 3200, WIDE)], maxWidth: 840 },
 
     { type: 'h2', text: 'System design' },
     {
       type: 'p',
       text: 'MuseScore is a mature product with a long history. By the time I joined, it was already generating stable revenue, but its UI and frontend stack was fragmented and difficult to scale. Each team was independently building on top of legacy solutions, accumulating design and technical debt.',
+      mobileText: [20, 24],
     },
     {
       type: 'p',
@@ -61,22 +69,24 @@ const project: Project = {
       text: 'As a result, the system unlocked deep interface personalization across different user segments: from professional musicians to beginners just discovering music. It also enabled a much faster experimentation cycle, as modular components could be reused, recombined, and iterated on without rebuilding foundational UI patterns.',
     },
     { type: 'media', items: [m(`${d}/06.png`, 3200, 3200, WIDE)] },
-    { type: 'media', items: [m(`${d}/07.png`, 1024, 1024, WIDE)] },
-    { type: 'media', items: [m(`${d}/08.png`, 3200, 3200, WIDE)] },
-    { type: 'media', cols: 2, items: [m(`${d}/09.mp4`, 1600, 1200, SQUARE), m(`${d}/10.mp4`, 1080, 1080, SQUARE)] },
-    { type: 'media', items: [m(`${d}/11.png`, 3200, 3200, WIDE)] },
+    { type: 'media', items: [m(`${d}/07.png`, 1024, 1024, WIDE)], mt: [4, 4] },
+    { type: 'media', items: [m(`${d}/08.png`, 3200, 3200, WIDE)], mt: [4, 4] },
+    { type: 'media', cols: 2, items: [m(`${d}/09.mp4`, 1600, 1200, SQUARE), m(`${d}/10.mp4`, 1080, 1080, SQUARE)], mt: [4, 4] },
+    { type: 'media', items: [m(`${d}/11.png`, 3200, 3200, WIDE)], mt: [4, 4] },
 
     { type: 'h2', text: 'Design team' },
     {
       type: 'p',
       text: "At Muse I'm leading and mentoring a team of 5 designers embedded in key product domains (Monetization, Growth, Mobile App, Core, and Education), defining shared design processes that systematically reduce design debt and accelerate delivery speed.",
+      mt: [50, 50],
+      mobileText: [20, 24],
     },
     {
       type: 'p',
       text: 'As a part of my top priorities was to establish a rhythm of continuous collaboration inside the team: weekly design critiques, structured feedback cycles, design hackathons and transparent processes around decision-making.',
     },
     { type: 'media', cols: 2, mobileCols: 2, items: [m(`${d}/12.png`, 2880, 2880), m(`${d}/13.png`, 2880, 2880)] },
-    { type: 'media', cols: 2, mobileCols: 2, items: [m(`${d}/14.png`, 2880, 2880), m(`${d}/15.png`, 1180, 1172, SQUARE)] },
+    { type: 'media', cols: 2, mobileCols: 2, items: [m(`${d}/14.png`, 2880, 2880), m(`${d}/15.png`, 1180, 1172, SQUARE)], mt: [4, 4] },
   ],
 };
 

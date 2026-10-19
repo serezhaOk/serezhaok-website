@@ -7,6 +7,11 @@
 }
 
 @media (max-width: 1199.98px) {
+  .small {
+    font-size: 32px;
+    line-height: 38.4px;
+  }
+
   .grid {
     grid-template-columns: minmax(0, 1fr);
   }

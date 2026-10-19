@@ -19,29 +19,40 @@ const project: Project = {
     cover: m('/media/covers/raiffeisen.png', 3650, 2844, undefined, 'Raiffeisen Bank'),
   },
   related: ['musegroup', 'musescore'],
+  headerSpace: [91, 93], // в оригинале у этого кейса шапка и конец отделены сильнее
+  endSpace: 90,
+  largeMobileHeadings: true,
   blocks: [
     { type: 'h2', text: 'Daily Banking: Complete Redesign' },
     { type: 'label', text: 'The Problem' },
     {
       type: 'p',
       text: 'Raiffeisen Bank is one of the largest banks in Europe by number of clients.\nHowever, a research showed that many customers did not perceive it as their primary bank, but rather as a secondary or backup option.',
+      mobileText: [20, 24],
     },
     {
       type: 'p',
       text: 'Key scenarios such as transfers, bill payments, and savings management were significantly more complex and time-consuming than those of direct competitors.',
+      mt: [28, 24],
+      mobileText: [20, 24],
     },
     { type: 'media', items: [m(`${d}/01.mp4`, 1080, 840, WIDE)] },
-    { type: 'media', cols: 2, items: [m(`${d}/02.png`, 2800, 2800), m(`${d}/03.png`, 2800, 2800)] },
-    { type: 'h3', text: 'My Contributions' },
+    { type: 'media', cols: 2, items: [m(`${d}/02.png`, 2800, 2800), m(`${d}/03.png`, 2800, 2800)], mt: [2, 2] },
+    { type: 'h3', text: 'My Contributions', mt: [52, 52] },
     {
       type: 'p',
       text: 'Delivered full redesign of Account to Account, Card to Card, Currency Exchange flows. Initiated ideation sprints (design hackathons), produced early prototypes, and led two rounds of user testing in collaboration with the Research Lead. Launched A/B experiments together with the product team to validate and optimize the new flows.',
+      maxWidth: '80%',
+      mobileText: [20, 24],
     },
     {
       type: 'p',
       text: 'After a successful release, guided product designers in scaling this direction to the remaining payment scenarios.',
+      maxWidth: '80%',
+      mt: [28, 24],
+      mobileText: [20, 24],
     },
-    { type: 'h3', text: 'Impact' },
+    { type: 'h3', text: 'Impact', mt: [52, 52] },
     {
       type: 'list',
       items: [
@@ -50,12 +61,13 @@ const project: Project = {
         'Accelerated feature delivery through clear, unified processes',
         'Aligned and inspired the design team around a shared vision for this project.',
       ],
+      maxWidth: '80%',
     },
 
-    { type: 'divider' },
-    { type: 'h2', text: 'Strategic product vision' },
+    { type: 'divider', mt: [91, 61] },
+    { type: 'h2', text: 'Strategic product vision', mt: [34, 34] },
     { type: 'media', items: [m(`${d}/04.mp4`, 1920, 1080, 1035 / 592)] },
-    { type: 'h3', text: 'My Contributions' },
+    { type: 'h3', text: 'My Contributions', mt: [60, 60] },
     {
       type: 'list',
       items: [
@@ -63,8 +75,9 @@ const project: Project = {
         'Translated the strategy into a clear system of principles, broke down into an actionable roadmap for the upcoming 6 months.',
         'Created a communication system to balance user experience and monetization patterns (principles, templates, touchpoints).',
       ],
+      maxWidth: '80%',
     },
-    { type: 'h3', text: 'Impact' },
+    { type: 'h3', text: 'Impact', mt: [60, 60] },
     {
       type: 'list',
       items: [
@@ -73,13 +86,14 @@ const project: Project = {
         'The direction became the reference for the design system adoption.',
         'The strategy became the foundation for redesign of core scenarios, enabling faster scaling and predictable quality.',
       ],
+      maxWidth: '80%',
     },
 
-    { type: 'h2', text: 'Rebranding and Emotional UX' },
+    { type: 'h2', text: 'Rebranding and Emotional UX', mt: [90, 60] },
     { type: 'media', items: [m(`${d}/05.mp4`, 1080, 840, 1035 / 764)] },
-    { type: 'media', cols: 2, items: [m(`${d}/06.png`, 3200, 3200), m(`${d}/07.png`, 3200, 3200)] },
-    { type: 'media', items: [m(`${d}/08.mp4`, 1420, 820, WIDE)] },
-    { type: 'h3', text: 'My Contributions' },
+    { type: 'media', cols: 2, items: [m(`${d}/06.png`, 3200, 3200), m(`${d}/07.png`, 3200, 3200)], mt: [2, 2] },
+    { type: 'media', items: [m(`${d}/08.mp4`, 1420, 820, WIDE)], mt: [2, 2] },
+    { type: 'h3', text: 'My Contributions', mt: [52, 52] },
     {
       type: 'list',
       items: [
@@ -89,7 +103,7 @@ const project: Project = {
         'Integrated new illustrations into all in-app communications (stories, banners, product pages). Reviewed the illustrations creation process, and the usage within different teams.',
       ],
     },
-    { type: 'h3', text: 'Impact' },
+    { type: 'h3', text: 'Impact', mt: [52, 52] },
     {
       type: 'list',
       items: [

@@ -31,6 +31,9 @@ export default async function CasePage({ params }: { params: Promise<Params> }) 
   const project = getProject(slug);
   if (!project) notFound();
 
+  // В оригинале под подзаголовком линия ближе к тексту, чем под метой
+  const [top, bottom] = project.headerSpace ?? [50, project.subtitle ? 43 : 53];
+
   const related = project.related.map((r) => {
     const p = getProject(r);
     if (!p) throw new Error(`В ${slug}.related указан несуществующий кейс ${r}`);
@@ -40,13 +43,13 @@ export default async function CasePage({ params }: { params: Promise<Params> }) 
   return (
     <article className={`container ${s.case}`}>
       <CaseHeader project={project} />
-      <hr className={`divider ${s.sepCase}`} />
-      <Blocks blocks={project.blocks} compact={project.compact} />
+      <hr className="divider" style={{ margin: `${top}px 0 ${bottom}px` }} />
+      <Blocks blocks={project.blocks} compact={project.compact} largeMobileHeadings={project.largeMobileHeadings} />
 
-      <hr className={`divider ${s.sepEnd}`} />
-      <ProjectGrid title="Related projects" cards={related} titleId="related" />
+      <hr className={`divider ${s.sepEnd}`} style={project.endSpace ? { marginTop: project.endSpace } : undefined} />
+      <ProjectGrid title="Related projects" cards={related} titleId="related" small />
 
-      <hr className={`divider ${s.sepEnd}`} />
+      <hr className={`divider ${s.sepEnd}`} style={project.endSpace ? { marginTop: project.endSpace } : undefined} />
       <Footer />
     </article>
   );

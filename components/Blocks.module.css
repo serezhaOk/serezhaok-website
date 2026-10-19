@@ -1,6 +1,11 @@
 .blocks {
+  display: flow-root; /* отступ первого блока не схлопывается с линией над ним */
   --p-size: 20px;
   --p-line: 28px;
+}
+
+.block {
+  margin-top: var(--mt);
 }
 
 .compact {
@@ -87,6 +92,11 @@
 }
 
 @media (max-width: 1199.98px) {
+  .block {
+    margin-top: var(--mt-m);
+    max-width: none !important; /* ширина из контента — только для десктопа */
+  }
+
   .h2 {
     font-size: 24px;
     line-height: 28.8px;
@@ -97,9 +107,24 @@
     line-height: 28.8px;
   }
 
-  .compact .p,
-  .compact .h4 {
-    max-width: none;
+  .largeHeadings .h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .largeHeadings .h3 {
+    font-size: 32px;
+    line-height: 38.4px;
+  }
+
+  .p,
+  .list {
+    font-size: var(--mfs, var(--p-size));
+    line-height: var(--mlh, var(--p-line));
+  }
+
+  .list li + li {
+    margin-top: var(--mlh, var(--p-line));
   }
 
   .row {

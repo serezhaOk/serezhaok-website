@@ -19,11 +19,31 @@ function gap(prev: Block | undefined, cur: Block, compact: boolean): number {
   return 28;
 }
 
-export function Blocks({ blocks, compact = false }: { blocks: Block[]; compact?: boolean }) {
+export function Blocks({
+  blocks,
+  compact = false,
+  largeMobileHeadings = false,
+}: {
+  blocks: Block[];
+  compact?: boolean;
+  largeMobileHeadings?: boolean;
+}) {
   return (
-    <div className={[s.blocks, compact && s.compact].filter(Boolean).join(' ')}>
+    <div className={[s.blocks, compact && s.compact, largeMobileHeadings && s.largeHeadings].filter(Boolean).join(' ')}>
       {blocks.map((block, i) => (
-        <div key={i} style={{ marginTop: gap(blocks[i - 1], block, compact) }}>
+        <div
+          key={i}
+          className={s.block}
+          data-block={i}
+          style={
+            {
+              '--mt': `${block.mt?.[0] ?? gap(blocks[i - 1], block, compact)}px`,
+              '--mt-m': `${block.mt?.[1] ?? gap(blocks[i - 1], block, compact)}px`,
+              maxWidth: block.maxWidth,
+              ...(block.mobileText && { '--mfs': `${block.mobileText[0]}px`, '--mlh': `${block.mobileText[1]}px` }),
+            } as CSSProperties
+          }
+        >
           <BlockView block={block} />
         </div>
       ))}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import type { Media as MediaType } from '@/content/types';
 import s from './Media.module.css';
 
@@ -21,7 +21,14 @@ export function Media({ media, className, eager }: Props) {
   const video = isVideo(media.src);
 
   return (
-    <div className={[s.frame, className].filter(Boolean).join(' ')} style={{ aspectRatio: ratio }}>
+    <div
+      className={[s.frame, media.h && s.fixed, className].filter(Boolean).join(' ')}
+      style={
+        media.h
+          ? ({ '--h': `${media.h[0]}px`, '--h-m': `${media.h[1]}px` } as CSSProperties)
+          : { aspectRatio: ratio }
+      }
+    >
       {video && !failed ? (
         <AutoVideo media={media} onError={() => setFailed(true)} />
       ) : video ? (

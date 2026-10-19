@@ -5,6 +5,17 @@
   background: var(--surface);
 }
 
+/* В оригинале у некоторых медиа высота фиксирована и не зависит от ширины */
+.fixed {
+  height: var(--h);
+}
+
+@media (max-width: 1199.98px) {
+  .fixed {
+    height: var(--h-m);
+  }
+}
+
 .fill {
   position: absolute;
   inset: 0;
