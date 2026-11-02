@@ -6,6 +6,7 @@ import './globals.css';
 import { Header } from '@/components/Header';
 import { SideNote } from '@/components/SideNote';
 import { CursorDot } from '@/components/CursorDot';
+import { Analytics } from '@/components/Analytics';
 import { site } from '@/content/site';
 
 export const metadata: Metadata = {
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <SideNote />
         <main id="content">{children}</main>
         <CursorDot />
+        <Analytics />
       </body>
     </html>
   );

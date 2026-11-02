@@ -11,6 +11,7 @@ export const site = {
   avatar: '/media/avatar.png',
   cv: 'https://docs.google.com/document/d/1BZIcW0FjKQO50sVNYdcPDYwNKMpxmCQ5XBszdDlX1ZY/edit?usp=sharing',
   email: 'serezhaok@gmail.com',
+  gaId: 'G-6S6ZC2ZXTP', // Google Analytics 4; пустая строка — отключить
 };
 
 // Пункты меню Projects (порядок как в оригинале) и превью справа.
